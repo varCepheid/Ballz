@@ -7,3 +7,7 @@ Blocks go away when they get to 0. Hit the round trigger symbols to get an extra
 
 ## How to Run
 Go to [the Unity Play webpage for the game](https://play.unity.com).
+
+## Acknowledgements and License
+This game was originally created by Ketchapp as a mobile game. They have full rights to the idea of the game.
+I created all game components and code in this version on my own. Please email me if you would like to use this game or any of its components.
