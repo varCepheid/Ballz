@@ -11,16 +11,12 @@ public class SpawnBalls : MonoBehaviour
   public GameManager gameManager;
   private GameObject rtsBall;
 
-  public Vector2 directionToLaunch;
-  public Vector2 mousePosition;
+  public Vector2 directionToLaunch, mousePosition;
+  private InputAction clickAction;
+  private ManageInputs inputs;
 
   public int ballsLaunched;
-
   private bool firstBall = true;
-
-  private Inputs inputs;
-  private InputAction clickAction;
-  private InputAction pointer;
 
   private readonly float TIME_BETWEEN_BALLS = 0.2f; // seconds
 
@@ -29,22 +25,17 @@ public class SpawnBalls : MonoBehaviour
   {
     gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     rtsBall = GameObject.Find("Ready-To-Shoot Ball");
+    inputs = GameObject.Find("Player Input").GetComponent<ManageInputs>();
+    clickAction = inputs.clickAction;
 
-    directionToLaunch = new(-2, -1);
-
-    inputs = new();
-    inputs.Player.Disable();
-    inputs.UI.Enable();
-    clickAction = inputs.UI.Click;
-    pointer = inputs.UI.Point;
-
+    directionToLaunch = new();
     ballsCreated = new();
   }
 
   // Update is called once per frame
   void Update()
   {
-    mousePosition = pointer.ReadValue<Vector2>();
+    mousePosition = inputs.mousePosition;
 
     if (gameManager.GamePhaseMatches("ready")) // phase where player can click and drag
     {
