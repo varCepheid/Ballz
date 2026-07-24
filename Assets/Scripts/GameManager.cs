@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
   public int numberOfBalls;
+  public int levelNumber;
   private string gamePhase; // ready -> holding -> running -> preparing; inactive
 
   private GameObject rtsBall;
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
   {
     numberOfBalls = 3;
     gamePhase = "ready";
+    levelNumber = 1;
 
     rtsBall = GameObject.Find("Ready-To-Shoot Ball");
   }
