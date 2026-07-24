@@ -8,21 +8,20 @@ public class GameManager : MonoBehaviour
 
   private GameObject rtsBall;
   private SpawnBalls spawnBalls;
+  private SpawnBlocksAndTokens spawnBTs;
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-    numberOfBalls = 3;
-    gamePhase = "ready";
-    levelNumber = 1;
-
     rtsBall = GameObject.Find("Ready-To-Shoot Ball");
     spawnBalls = GameObject.Find("Spawn Manager").GetComponent<SpawnBalls>();
-  }
+    spawnBTs = GameObject.Find("Spawn Manager").GetComponent<SpawnBlocksAndTokens>();
 
-  // Update is called once per frame
-  void Update()
-  {
+    rtsBall.transform.position = new(-0.5f, -4.8f);
+
+    numberOfBalls = 1;
+    levelNumber = 0;
+    SetPhase("preparing");
   }
 
   public void SetPhase(string newPhase)
@@ -31,7 +30,6 @@ public class GameManager : MonoBehaviour
 
     if (newPhase.Equals("ready"))
     {
-      rtsBall.SetActive(true);
       gamePhase = "ready";
     }
     else if (newPhase.Equals("holding"))
@@ -46,12 +44,19 @@ public class GameManager : MonoBehaviour
     }
     else if (newPhase.Equals("preparing"))
     {
-      SetPhase("ready");
+      gamePhase = "preparing";
+      rtsBall.SetActive(true);
+      spawnBTs.PrepareNextLevel();
     }
   }
 
   public bool GamePhaseMatches(string other)
   {
     return gamePhase.Equals(other);
+  }
+
+  public void GameOver()
+  {
+    Debug.Log("Game Over");
   }
 }

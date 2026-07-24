@@ -108,8 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBall
   launchDirection: {x: 0, y: 0}
-  speed: 2
-  accelFactor: 1.5
+  speed: 5
 --- !u!50 &-6861454458750095977
 Rigidbody2D:
   serializedVersion: 5

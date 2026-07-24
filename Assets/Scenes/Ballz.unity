@@ -171,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200806540}
   - component: {fileID: 200806539}
+  - component: {fileID: 200806541}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -211,6 +212,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &200806541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200806538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7611ea5006a03e54e84fb4efee952c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnBlocksAndTokens
+  gameManager: {fileID: 0}
+  blockPrefab: {fileID: 509863683688017623, guid: 5b0dcd37e6fb4c447abe91eaae4595ba, type: 3}
+  tokenPrefab: {fileID: 6278841241051917283, guid: b02eaf24f019fec42a34c70ed3666924, type: 3}
+  spawnedBlocks: []
+  spawnedTokens: []
 --- !u!1 &279314485
 GameObject:
   m_ObjectHideFlags: 0

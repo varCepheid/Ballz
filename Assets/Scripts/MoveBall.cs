@@ -19,17 +19,16 @@ public class MoveBall : MonoBehaviour
     body.AddForce(speed * launchDirection, ForceMode2D.Impulse); // start moving in direction of mouse at starting speed
   }
 
-  // Update is called once per frame
-  void Update()
+  void FixedUpdate()
   {
     curVelocity = body.GetPointVelocity(body.worldCenterOfMass);
     if (curVelocity.magnitude < MAX_VELOCITY) // accelerate in current direction until velocity is 20
     {
-      body.AddForce(ACCEL_FACTOR * Time.deltaTime * curVelocity.normalized, ForceMode2D.Impulse);
+      body.AddForce(ACCEL_FACTOR * Time.fixedDeltaTime * curVelocity.normalized, ForceMode2D.Impulse);
     }
     else // once velocity reaches 20, accelerate downwards to end round
     {
-      body.AddForce(ACCEL_FACTOR * Time.deltaTime * Vector2.down, ForceMode2D.Impulse);
+      body.AddForce(ACCEL_FACTOR * Time.fixedDeltaTime * Vector2.down, ForceMode2D.Impulse);
     }
   }
 
