@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
   private string gamePhase; // ready -> holding -> running -> preparing; inactive
 
   private GameObject rtsBall;
+  private SpawnBalls spawnBalls;
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
@@ -16,34 +17,41 @@ public class GameManager : MonoBehaviour
     levelNumber = 1;
 
     rtsBall = GameObject.Find("Ready-To-Shoot Ball");
+    spawnBalls = GameObject.Find("Spawn Manager").GetComponent<SpawnBalls>();
   }
 
   // Update is called once per frame
   void Update()
   {
-
   }
 
   public void SetPhase(string newPhase)
   {
-    if (newPhase == "running")
+    Debug.Log(newPhase);
+
+    if (newPhase.Equals("ready"))
+    {
+      rtsBall.SetActive(true);
+      gamePhase = "ready";
+    }
+    else if (newPhase.Equals("holding"))
+    {
+      gamePhase = "holding";
+    }
+    else if (newPhase.Equals("running"))
     {
       gamePhase = "running";
       rtsBall.SetActive(false);
+      spawnBalls.StartSpawningBalls();
     }
-    else if ((newPhase == "ready") || (newPhase == "preparing"))
+    else if (newPhase.Equals("preparing"))
     {
-      rtsBall.SetActive(true);
-      gamePhase = newPhase;
-    }
-    else if (newPhase == "holding")
-    {
-      gamePhase = "holding";
+      SetPhase("ready");
     }
   }
 
   public bool GamePhaseMatches(string other)
   {
-    return gamePhase == other;
+    return gamePhase.Equals(other);
   }
 }

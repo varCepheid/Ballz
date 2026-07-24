@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - bottom
+  - token
   layers:
   - Default
   - TransparentFX
