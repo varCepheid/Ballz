@@ -303,6 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ec12ed302012747ae7852b311f1607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeBlockColor
+  sprites: []
+  numberGetter: {fileID: 0}
 --- !u!1 &5352782534213600948
 GameObject:
   m_ObjectHideFlags: 0
