@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
   public bool GamePhaseMatches(string other)
   {
-    return gamePhase.Equals(other);
+    return gamePhase == other;
   }
 
   public void GameOver()

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -62,7 +61,6 @@ public class SpawnBalls : MonoBehaviour
           }
         }
       }
-
     }
   }
 
@@ -70,7 +68,7 @@ public class SpawnBalls : MonoBehaviour
   {
     ballsLaunched++;
     thisBall = Instantiate(ballPrefab, rtsBall.transform.position, ballPrefab.transform.rotation);
-    thisBall.GetComponent<MoveBall>().launchDirection = directionToLaunch.normalized;
+    thisBall.GetComponent<MoveBall>().moveDirection = directionToLaunch.normalized;
     ballsCreated.Add(thisBall);
   }
 

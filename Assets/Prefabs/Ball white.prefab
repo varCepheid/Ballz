@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7f156b6c8efa446871f44700095feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBall
-  launchDirection: {x: 0, y: 0}
-  speed: 5
+  moveDirection: {x: 0, y: 0}
+  STARTING_VELOCITY: 2
+  ACCEL_FACTOR: 1.5
 --- !u!50 &-6861454458750095977
 Rigidbody2D:
   serializedVersion: 5
@@ -125,7 +126,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 3af3e107442672143a7737232d64a90f, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

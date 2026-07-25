@@ -1,34 +1,33 @@
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class MoveBall : MonoBehaviour
 {
-  public Vector2 launchDirection;
-  private Rigidbody2D body;
-  private Vector2 curVelocity;
+  public Vector2 moveDirection; // always normalized
 
-  public float speed = 2.0f;
+  private float speed;
+  public float STARTING_VELOCITY = 2.0f;
   private readonly float MAX_VELOCITY = 20.0f;
-  private readonly float ACCEL_FACTOR = 1.5f;
+  public float ACCEL_FACTOR = 1.5f;
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-    body = GetComponent<Rigidbody2D>();
-    body.AddForce(speed * launchDirection, ForceMode2D.Impulse); // start moving in direction of mouse at starting speed
+    speed = STARTING_VELOCITY;
   }
 
-  void FixedUpdate()
+  void Update()
   {
-    curVelocity = body.GetPointVelocity(body.worldCenterOfMass);
-    if (curVelocity.magnitude < MAX_VELOCITY) // accelerate in current direction until velocity is 20
+    // move in current direction
+    transform.Translate(speed * Time.deltaTime * moveDirection);
+
+    if (speed <= MAX_VELOCITY) // increase speed if not yet at max velocity
     {
-      body.AddForce(ACCEL_FACTOR * Time.fixedDeltaTime * curVelocity.normalized, ForceMode2D.Impulse);
+      speed += ACCEL_FACTOR * Time.deltaTime;
     }
-    else // once velocity reaches 20, accelerate downwards to end round
+    else // make direction more down
     {
-      body.AddForce(ACCEL_FACTOR * Time.fixedDeltaTime * Vector2.down, ForceMode2D.Impulse);
+      moveDirection.y -= 0.1f;
+      moveDirection.Normalize();
     }
   }
 
@@ -38,9 +37,17 @@ public class MoveBall : MonoBehaviour
     {
       gameObject.SetActive(false);
     }
-    else if (collision.gameObject.CompareTag("token")) // contacted new ball token
-    {
+  }
 
+  void OnCollisionEnter2D(Collision2D collision)
+  {
+    if (collision.gameObject.CompareTag("vertical barrier")) // hit something vertical, flip x-direction
+    {
+      moveDirection.x *= -1;
+    }
+    else if (collision.gameObject.CompareTag("horizontal barrier")) // hit something horizontal, flip y-direction
+    {
+      moveDirection.y *= -1;
     }
   }
 }

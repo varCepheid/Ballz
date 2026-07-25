@@ -21,19 +21,12 @@ public class UpdateNumberOnBlock : MonoBehaviour
     text.text = number.ToString();
   }
 
-  void OnCollisionEnter2D(Collision2D collision)
+  public void BallCollision()
   {
-    Debug.Log("Collision2D between block at " + (transform.position.x + 3.5f).ToString() + " and " + collision.gameObject.name);
-
     number--;
     if (number <= 0)
     {
       gameObject.SetActive(false);
     }
-  }
-
-  void OnCollisionEnter(Collision collision)
-  {
-    Debug.Log("Collision between block at " + (transform.position.x + 3.5f).ToString() + " and " + collision.gameObject.name);
   }
 }
