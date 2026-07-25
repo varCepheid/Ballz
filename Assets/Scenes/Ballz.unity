@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 200806540}
   - component: {fileID: 200806539}
   - component: {fileID: 200806541}
+  - component: {fileID: 200806542}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -396,6 +397,24 @@ MonoBehaviour:
   tokenPrefab: {fileID: 6278841241051917283, guid: b02eaf24f019fec42a34c70ed3666924, type: 3}
   spawnedBlocks: []
   spawnedTokens: []
+--- !u!114 &200806542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200806538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e046850faf8df041a9e4a85bc39c8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RemoveInactiveObjects
+  gameManager: {fileID: 0}
+  spawnManager: {fileID: 0}
+  rtsBall: {fileID: 0}
+  balls: []
+  blocks: []
+  tokens: []
 --- !u!1 &236942013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,6 +2026,7 @@ GameObject:
   - component: {fileID: 1489770641}
   - component: {fileID: 1489770640}
   - component: {fileID: 1489770642}
+  - component: {fileID: 1489770643}
   m_Layer: 0
   m_Name: Bottom Wall
   m_TagString: bottom
@@ -2135,6 +2155,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1489770643
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489770639}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1546728549
 MonoBehaviour:
   m_ObjectHideFlags: 0

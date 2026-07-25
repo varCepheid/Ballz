@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class MoveBall : MonoBehaviour
 {
-  public Vector2 moveDirection; // always normalized
-
+  private Vector2 moveDirection; // always normalized
   private float speed;
   public float STARTING_VELOCITY = 2.0f;
   private readonly float MAX_VELOCITY = 20.0f;
@@ -49,5 +48,10 @@ public class MoveBall : MonoBehaviour
     {
       moveDirection.y *= -1;
     }
+  }
+
+  public void SetDirection(Vector2 newDirection)
+  {
+    moveDirection = newDirection;
   }
 }

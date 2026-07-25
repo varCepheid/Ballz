@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class SpawnBlocksAndTokens : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class SpawnBlocksAndTokens : MonoBehaviour
   public List<GameObject> spawnedBlocks;
   public List<GameObject> spawnedTokens;
 
-  private readonly Random rand = new();
+  private readonly System.Random rand = new();
   private int levelNumber;
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,22 +20,6 @@ public class SpawnBlocksAndTokens : MonoBehaviour
     spawnedBlocks = new();
     spawnedTokens = new();
     levelNumber = 1;
-  }
-
-  void Update()
-  {
-    if (gameManager.GamePhaseMatches("running")) // phase where balls are moving
-    {
-      for (int i = 0; i < spawnedBlocks.Count; i++) // check for inactive blocks and remove them
-      {
-        GameObject block = spawnedBlocks[i];
-        if (!block.activeSelf) // blocks become inactive when they get to 0
-        {
-          spawnedBlocks.Remove(block);
-          Destroy(block);
-        }
-      }
-    }
   }
 
   public void PrepareNextLevel()

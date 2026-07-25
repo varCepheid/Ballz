@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
 
   public void SetPhase(string newPhase)
   {
-    Debug.Log(newPhase);
-
     if (newPhase.Equals("ready"))
     {
       gamePhase = "ready";
