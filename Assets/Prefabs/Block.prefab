@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -6207777159992342699}
   - component: {fileID: 595319649944027812}
   - component: {fileID: 5467071697905168996}
+  - component: {fileID: 3146206721332793725}
   m_Layer: 0
   m_Name: Block
   m_TagString: block
@@ -290,6 +291,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &3146206721332793725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509863683688017623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ec12ed302012747ae7852b311f1607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeBlockColor
 --- !u!1 &5352782534213600948
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
+  updater: {fileID: 0}
 --- !u!1 &6484160212092105794
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
+  updater: {fileID: 0}
 --- !u!1 &8573268313756995396
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
+  updater: {fileID: 0}
 --- !u!1 &8862708761138797618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,3 +1118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
+  updater: {fileID: 0}
