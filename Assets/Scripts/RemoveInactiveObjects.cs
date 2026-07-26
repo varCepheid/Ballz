@@ -16,7 +16,6 @@ public class RemoveInactiveObjects : MonoBehaviour
   {
     gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     spawnManager = GameObject.Find("Spawn Manager");
-    rtsBall = GameObject.Find("Ready-To-Shoot Ball");
   }
 
   void Update()
@@ -25,7 +24,7 @@ public class RemoveInactiveObjects : MonoBehaviour
     blocks = spawnManager.GetComponent<SpawnBlocksAndTokens>().spawnedBlocks;
     tokens = spawnManager.GetComponent<SpawnBlocksAndTokens>().spawnedTokens;
 
-    if (!gameManager.GamePhaseMatches("running")) // only check during phase where balls are moving
+    if (!gameManager.GamePhaseMatches("running") && !gameManager.GamePhaseMatches("inactive")) // only check during phase where balls are moving
     {
       firstBall = true;
       return;
@@ -58,8 +57,11 @@ public class RemoveInactiveObjects : MonoBehaviour
       {
         if (firstBall) // record position of the first ball
         {
-          rtsBall.transform.position = new Vector2(ball.transform.position.x, -4.8f);
           firstBall = false;
+
+          // put RTS ball in first ball's position
+          rtsBall.transform.position = new Vector2(ball.transform.position.x, -4.9f);
+          rtsBall.SetActive(true);
         }
 
         balls.Remove(ball);

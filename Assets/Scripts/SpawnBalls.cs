@@ -7,7 +7,7 @@ public class SpawnBalls : MonoBehaviour
   private GameObject thisBall;
   public List<GameObject> ballsCreated;
   public GameManager gameManager;
-  private GameObject rtsBall;
+  public GameObject rtsBall;
 
   public Vector2 directionToLaunch, mousePosition;
   private ManageInputs inputs;
@@ -20,7 +20,6 @@ public class SpawnBalls : MonoBehaviour
   void Start()
   {
     gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-    rtsBall = GameObject.Find("Ready-To-Shoot Ball");
     inputs = GameObject.Find("Player Input").GetComponent<ManageInputs>();
 
     directionToLaunch = new();

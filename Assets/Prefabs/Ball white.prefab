@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1868281491849645104}
   - component: {fileID: -6861454458750095977}
   - component: {fileID: -5119794525014159572}
+  - component: {fileID: -2861475286592302693}
   m_Layer: 0
   m_Name: Ball white
   m_TagString: Untagged
@@ -107,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7f156b6c8efa446871f44700095feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveBall
-  moveDirection: {x: 0, y: 0}
   STARTING_VELOCITY: 2
   ACCEL_FACTOR: 1.5
 --- !u!50 &-6861454458750095977
@@ -173,3 +173,15 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-2861475286592302693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821691207834920354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39171f423a931a741abd965543297912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableWhenInactive

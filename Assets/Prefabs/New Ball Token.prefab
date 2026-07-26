@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: -1888518041545217596}
   - component: {fileID: 3994909013590281748}
   - component: {fileID: -6784338630002501784}
+  - component: {fileID: -7609238339519419085}
   m_Layer: 0
   m_Name: New Ball Token
   m_TagString: token
@@ -375,3 +376,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreateNewBall
   greenBallPrefab: {fileID: 9220413274237319049, guid: 8746e2ba89529ea4fab0ab07d291a696, type: 3}
+--- !u!114 &-7609238339519419085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278841241051917283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39171f423a931a741abd965543297912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableWhenInactive

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 595319649944027812}
   - component: {fileID: 5467071697905168996}
   - component: {fileID: 3146206721332793725}
+  - component: {fileID: -1571158364415895897}
   m_Layer: 0
   m_Name: Block
   m_TagString: block
@@ -305,6 +306,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChangeBlockColor
   sprites: []
   numberGetter: {fileID: 0}
+--- !u!114 &-1571158364415895897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509863683688017623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39171f423a931a741abd965543297912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableWhenInactive
 --- !u!1 &5352782534213600948
 GameObject:
   m_ObjectHideFlags: 0

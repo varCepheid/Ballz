@@ -14,7 +14,7 @@ public class MoveDownEachLevel : MonoBehaviour
     transform.Translate(0.0f, -1.0f, 0.0f);
     if ((transform.position.y <= -3.0f) && gameObject.CompareTag("block"))
     {
-      gameManager.GameOver();
+      StartCoroutine(gameManager.SetInactive());
     }
   }
 }
