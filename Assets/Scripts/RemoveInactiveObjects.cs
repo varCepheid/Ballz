@@ -24,54 +24,55 @@ public class RemoveInactiveObjects : MonoBehaviour
     blocks = spawnManager.GetComponent<SpawnBlocksAndTokens>().spawnedBlocks;
     tokens = spawnManager.GetComponent<SpawnBlocksAndTokens>().spawnedTokens;
 
-    if (!gameManager.GamePhaseMatches("running") && !gameManager.GamePhaseMatches("inactive")) // only check during phase where balls are moving
+    if (gameManager.GamePhaseMatches("running") || gameManager.GamePhaseMatches("inactive")) // only check during phase where balls are moving
+    {
+      for (int i = 0; i < blocks.Count; i++) // check for inactive blocks and remove them
+      {
+        GameObject block = blocks[i];
+        if (!block.activeSelf) // blocks become inactive when they get to 0
+        {
+          blocks.Remove(block);
+          Destroy(block);
+        }
+      }
+
+      for (int i = 0; i < tokens.Count; i++) // check for inactive tokens and remove them
+      {
+        GameObject token = tokens[i];
+        if (!token.activeSelf) // tokens become inactive when they get hit by a ball
+        {
+          tokens.Remove(token);
+          Destroy(token);
+        }
+      }
+
+      for (int i = 0; i < balls.Count; i++) // destroy balls that have hit the bottom
+      {
+        GameObject ball = balls[i];
+        if (!ball.activeInHierarchy) // balls become inactive when they hit the bottom
+        {
+          if (firstBall) // record position of the first ball
+          {
+            firstBall = false;
+
+            // put RTS ball in first ball's position
+            rtsBall.transform.position = new Vector2(ball.transform.position.x, -4.9f);
+            rtsBall.SetActive(true);
+          }
+
+          balls.Remove(ball);
+          Destroy(ball);
+
+          if (balls.Count == 0) // when last ball is destroyed, move to next phase
+          {
+            gameManager.SetPhase("preparing");
+          }
+        }
+      }
+    }
+    else
     {
       firstBall = true;
-      return;
-    }
-
-    for (int i = 0; i < blocks.Count; i++) // check for inactive blocks and remove them
-    {
-      GameObject block = blocks[i];
-      if (!block.activeSelf) // blocks become inactive when they get to 0
-      {
-        blocks.Remove(block);
-        Destroy(block);
-      }
-    }
-
-    for (int i = 0; i < tokens.Count; i++) // check for inactive tokens and remove them
-    {
-      GameObject token = tokens[i];
-      if (!token.activeSelf) // tokens become inactive when they get hit by a ball
-      {
-        tokens.Remove(token);
-        Destroy(token);
-      }
-    }
-
-    for (int i = 0; i < balls.Count; i++) // destroy balls that have hit the bottom
-    {
-      GameObject ball = balls[i];
-      if (!ball.activeInHierarchy) // balls become inactive when they hit the bottom
-      {
-        if (firstBall) // record position of the first ball
-        {
-          firstBall = false;
-
-          // put RTS ball in first ball's position
-          rtsBall.transform.position = new Vector2(ball.transform.position.x, -4.9f);
-          rtsBall.SetActive(true);
-        }
-
-        balls.Remove(ball);
-        Destroy(ball);
-
-        if (balls.Count == 0) // when last ball is destroyed, move to next phase
-        {
-          gameManager.SetPhase("preparing");
-        }
-      }
     }
   }
 }

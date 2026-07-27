@@ -58,22 +58,26 @@ public class SpawnBlocksAndTokens : MonoBehaviour
         continue;
       }
 
-      switch (rand.Next(4))
+      switch (rand.Next(10))
       {
         case 0:
         case 1:
+        case 2:
+        case 3:
           // spawn normal-value block
           thisObject = Instantiate(blockPrefab, GetSpawnLocation(place), blockPrefab.transform.rotation);
           thisObject.GetComponent<UpdateNumberOnBlock>().number = levelNumber;
           spawnedBlocks.Add(thisObject);
           break;
-        case 2:
+        case 4:
+        case 5:
+        case 6:
           // spawn double-value block
           thisObject = Instantiate(blockPrefab, GetSpawnLocation(place), blockPrefab.transform.rotation);
           thisObject.GetComponent<UpdateNumberOnBlock>().number = levelNumber * 2;
           spawnedBlocks.Add(thisObject);
           break;
-          // case 3: spawn nothing here
+          // case 7/8/9: spawn nothing here
       }
     }
   }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2861475286592302693}
   m_Layer: 0
   m_Name: Ball white
-  m_TagString: Untagged
+  m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,3 +185,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39171f423a931a741abd965543297912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisableWhenInactive
+  gameManager: {fileID: 0}

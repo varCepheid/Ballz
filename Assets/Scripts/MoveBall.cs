@@ -25,7 +25,7 @@ public class MoveBall : MonoBehaviour
     }
     else // make direction more down
     {
-      moveDirection.y -= 0.1f;
+      moveDirection.y -= 0.1f * Time.deltaTime;
       moveDirection.Normalize();
     }
   }

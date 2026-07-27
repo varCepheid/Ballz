@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     scoreText.SetActive(false);
     gameOverText.SetActive(true);
     startButton.SetActive(true);
-    startButton.GetComponent<TextMeshProUGUI>().text = "Play Again";
+    startButton.GetComponentInChildren<TextMeshProUGUI>().text = "Play Again";
   }
 
   public IEnumerator SetInactive() // called by blocks when they reach last row, ends game after half a second
