@@ -3,7 +3,7 @@ using UnityEngine;
 public class FallAndAddBall : MonoBehaviour
 {
   public GameManager gameManager;
-  public float speed = 3.0f;
+  public float speed = 5f;
 
   void OnEnable()
   {
@@ -27,7 +27,7 @@ public class FallAndAddBall : MonoBehaviour
       else
       {
         transform.Translate(speed * Time.deltaTime * Vector2.down);
-        speed += 3.0f * Time.deltaTime;
+        speed += 5f * Time.deltaTime;
       }
     }
   }

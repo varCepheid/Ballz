@@ -9,7 +9,7 @@ public class SpawnBalls : MonoBehaviour
   public GameManager gameManager;
   public GameObject rtsBall;
 
-  public Vector2 directionToLaunch, mousePosition;
+  public Vector2 directionToLaunch;
   private ManageInputs inputs;
 
   public int ballsLaunched;
@@ -47,8 +47,7 @@ public class SpawnBalls : MonoBehaviour
   public void StartSpawningBalls() // called by Game Manager when move to running phase
   {
     // send balls in direction of mouse
-    mousePosition = inputs.mousePosition;
-    directionToLaunch = mousePosition - (Vector2)rtsBall.transform.position;
+    directionToLaunch = inputs.mouseChange;
 
     // reset counter and list to prepare for new balls
     ballsLaunched = 0;

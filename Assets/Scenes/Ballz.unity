@@ -197,7 +197,6 @@ MonoBehaviour:
   gameManager: {fileID: 279314486}
   rtsBall: {fileID: 777485846}
   directionToLaunch: {x: 0, y: 0}
-  mousePosition: {x: 0, y: 0}
   ballsLaunched: 0
 --- !u!4 &200806540
 Transform:
@@ -1417,7 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c2dff3a8d5e19479b78e2a43a04b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveWithMouse
-  distanceFromBall: 0.4
+  distanceFromBall: 0.8
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,8 +2272,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  mousePosition: {x: 0, y: 0}
-  pointerValue: {x: 0, y: 0}
+  mouseChange: {x: 0, y: 0}
 --- !u!1 &1429762894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c2dff3a8d5e19479b78e2a43a04b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveWithMouse
-  distanceFromBall: 0.2
+  distanceFromBall: 0.4
 --- !u!114 &1434890869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2793,7 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c2dff3a8d5e19479b78e2a43a04b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveWithMouse
-  distanceFromBall: 0.6
+  distanceFromBall: 1.2
 --- !u!114 &1658293800
 MonoBehaviour:
   m_ObjectHideFlags: 0

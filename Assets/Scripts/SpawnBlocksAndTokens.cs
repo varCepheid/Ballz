@@ -11,7 +11,7 @@ public class SpawnBlocksAndTokens : MonoBehaviour
   public List<GameObject> spawnedTokens;
 
   private readonly System.Random rand = new();
-  private int levelNumber;
+  private int levelNumber, tokenPlace;
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
@@ -45,10 +45,17 @@ public class SpawnBlocksAndTokens : MonoBehaviour
 
   private void SpawnRow() // spawns new row with one token and collection of blocks
   {
-    // spawn token
-    int tokenPlace = rand.Next(7); // so that a block does not spawn on top
-    thisObject = Instantiate(tokenPrefab, GetSpawnLocation(tokenPlace), tokenPrefab.transform.rotation);
-    spawnedTokens.Add(thisObject);
+    if (levelNumber > 1) // don't spawn token on first level
+    {
+      // spawn token
+      tokenPlace = rand.Next(7); // so that a block does not spawn on top
+      thisObject = Instantiate(tokenPrefab, GetSpawnLocation(tokenPlace), tokenPrefab.transform.rotation);
+      spawnedTokens.Add(thisObject);
+    }
+    else
+    {
+      tokenPlace = 7;
+    }
 
     // spawn blocks
     for (int place = 0; place < 7; place++)
@@ -58,7 +65,7 @@ public class SpawnBlocksAndTokens : MonoBehaviour
         continue;
       }
 
-      switch (rand.Next(10))
+      switch (rand.Next(9))
       {
         case 0:
         case 1:
@@ -71,13 +78,12 @@ public class SpawnBlocksAndTokens : MonoBehaviour
           break;
         case 4:
         case 5:
-        case 6:
           // spawn double-value block
           thisObject = Instantiate(blockPrefab, GetSpawnLocation(place), blockPrefab.transform.rotation);
           thisObject.GetComponent<UpdateNumberOnBlock>().number = levelNumber * 2;
           spawnedBlocks.Add(thisObject);
           break;
-          // case 7/8/9: spawn nothing here
+          // case 6/7/8: spawn nothing here
       }
     }
   }

@@ -4,9 +4,9 @@ public class MoveBall : MonoBehaviour
 {
   private Vector2 moveDirection; // always normalized
   private float speed;
-  public float STARTING_VELOCITY = 2.0f;
+  public float STARTING_VELOCITY = 3.0f;
   private readonly float MAX_VELOCITY = 20.0f;
-  public float ACCEL_FACTOR = 1.5f;
+  public float ACCEL_FACTOR = 2f;
 
   private bool hitVerticalBarrierThisFrame, hitHorizontalBarrierThisFrame;
 

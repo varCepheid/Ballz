@@ -12,9 +12,16 @@ public class MoveDownEachLevel : MonoBehaviour
   public void MoveDown()
   {
     transform.Translate(0.0f, -1.0f, 0.0f);
-    if ((transform.position.y <= -4.0f) && gameObject.CompareTag("block"))
+    if (transform.position.y <= -4.0f)
     {
-      StartCoroutine(gameManager.SetInactive());
+      if (gameObject.CompareTag("block"))
+      {
+        StartCoroutine(gameManager.SetInactive());
+      }
+      else if (gameObject.CompareTag("token"))
+      {
+        gameObject.SetActive(false);
+      }
     }
   }
 }

@@ -26,8 +26,7 @@ public class MoveWithMouse : MonoBehaviour
     // while mouse is down, move away from ball towards mouse
     if (gameManager.GamePhaseMatches("holding"))
     {
-      towardsMouse = inputs.mousePosition - (Vector2)ball.transform.position;
-      towardsMouse.Normalize();
+      towardsMouse = inputs.mouseChange.normalized;
       transform.Translate(towardsMouse * distanceFromBall);
     }
   }
