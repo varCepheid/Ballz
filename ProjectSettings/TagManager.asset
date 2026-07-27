@@ -9,6 +9,7 @@ TagManager:
   - block
   - vertical barrier
   - horizontal barrier
+  - ball
   layers:
   - Default
   - TransparentFX

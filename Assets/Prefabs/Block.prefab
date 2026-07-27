@@ -33,7 +33,7 @@ RectTransform:
   m_GameObject: {fileID: 509863683688017623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
+  m_LocalScale: {x: 0.122209996, y: 0.122209996, z: 0.122209996}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1866330297484713872}
@@ -45,7 +45,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.47, y: 2.5193}
+  m_AnchoredPosition: {x: -2.5012, y: 2.5048}
   m_SizeDelta: {x: 20.65, y: 21.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7147739283300592549
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: c0e7e0ad51f75d945b6406dfc1bf303d, type: 2}
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 6.026639, y: 6.432465, z: 6.070857, w: 6.396401}
+  m_margin: {x: 6.2722664, y: 6.650802, z: 6.316765, w: 6.68297}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -307,7 +307,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.043685913, y: -0.041748047}
+  m_Offset: {x: 0.038418174, y: -0.03442216}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -317,7 +317,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.553793, y: 8.461981}
+  m_Size: {x: 8.038085, y: 7.9868445}
   m_EdgeRadius: 0
 --- !u!1 &5352782534213600948
 GameObject:
@@ -331,7 +331,6 @@ GameObject:
   - component: {fileID: 4439998827267078217}
   - component: {fileID: 6547098457289543049}
   - component: {fileID: 3299132615379296162}
-  - component: {fileID: 542844997389296139}
   m_Layer: 0
   m_Name: Right Barrier
   m_TagString: vertical barrier
@@ -348,8 +347,8 @@ Transform:
   m_GameObject: {fileID: 5352782534213600948}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.85, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 8, z: 10.000001}
+  m_LocalPosition: {x: 3.9, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 7.6, z: 10.000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1497425053364260684}
@@ -404,7 +403,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -475,7 +474,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.056861907, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -485,21 +484,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1137235, y: 1}
   m_EdgeRadius: 0
---- !u!114 &542844997389296139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5352782534213600948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
-  updater: {fileID: 0}
 --- !u!1 &6484160212092105794
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +513,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.6, y: 7.6, z: 7.6}
+  m_LocalScale: {x: 7.9999995, y: 7.9999995, z: 7.9999995}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1497425053364260684}
@@ -582,7 +568,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -604,7 +590,6 @@ GameObject:
   - component: {fileID: 6596271318414692829}
   - component: {fileID: 2584869532019546463}
   - component: {fileID: 7533300060899862219}
-  - component: {fileID: 891045789814194344}
   m_Layer: 0
   m_Name: Top Barrier
   m_TagString: horizontal barrier
@@ -621,8 +606,8 @@ Transform:
   m_GameObject: {fileID: 8056854906744217330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.85, z: 0}
-  m_LocalScale: {x: 8, y: 0.3, z: 10.000001}
+  m_LocalPosition: {x: 0, y: 3.9, z: 0}
+  m_LocalScale: {x: 7.6, y: 0.2, z: 10.000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1497425053364260684}
@@ -677,7 +662,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -748,7 +733,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.011367887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -758,21 +743,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.0227356}
   m_EdgeRadius: 0
---- !u!114 &891045789814194344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8056854906744217330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
-  updater: {fileID: 0}
 --- !u!1 &8573268313756995396
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +757,6 @@ GameObject:
   - component: {fileID: 249822379833376804}
   - component: {fileID: 3803671681552277317}
   - component: {fileID: 3622687779111495781}
-  - component: {fileID: 694178390502438123}
   m_Layer: 0
   m_Name: Left Barrier
   m_TagString: vertical barrier
@@ -802,8 +773,8 @@ Transform:
   m_GameObject: {fileID: 8573268313756995396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.85, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 8, z: 10.000001}
+  m_LocalPosition: {x: -3.9, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 7.6, z: 10.000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1497425053364260684}
@@ -858,7 +829,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -929,7 +900,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.019459546, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -939,21 +910,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9610808, y: 1}
   m_EdgeRadius: 0
---- !u!114 &694178390502438123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8573268313756995396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
-  updater: {fileID: 0}
 --- !u!1 &8862708761138797618
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +924,6 @@ GameObject:
   - component: {fileID: 4364739929840495227}
   - component: {fileID: 6845689982403078378}
   - component: {fileID: 8282168490872182923}
-  - component: {fileID: 601197220853772687}
   m_Layer: 0
   m_Name: Bottom Barrier
   m_TagString: horizontal barrier
@@ -983,8 +940,8 @@ Transform:
   m_GameObject: {fileID: 8862708761138797618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.85, z: 0}
-  m_LocalScale: {x: 8, y: 0.3, z: 10.000001}
+  m_LocalPosition: {x: 0, y: -3.9, z: 0}
+  m_LocalScale: {x: 7.6, y: 0.2, z: 10.000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1497425053364260684}
@@ -1039,7 +996,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1110,7 +1067,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0682306}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1120,18 +1077,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.1364613}
   m_EdgeRadius: 0
---- !u!114 &601197220853772687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8862708761138797618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141517649c9e2584f9ccb52ca01a88a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CheckForBallContact
-  updater: {fileID: 0}

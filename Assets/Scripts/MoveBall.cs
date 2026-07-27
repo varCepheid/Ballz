@@ -8,14 +8,21 @@ public class MoveBall : MonoBehaviour
   private readonly float MAX_VELOCITY = 20.0f;
   public float ACCEL_FACTOR = 1.5f;
 
+  private bool hitVerticalBarrierThisFrame, hitHorizontalBarrierThisFrame;
+
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
     speed = STARTING_VELOCITY;
+    hitHorizontalBarrierThisFrame = false;
+    hitVerticalBarrierThisFrame = false;
   }
 
   void Update()
   {
+    hitHorizontalBarrierThisFrame = false;
+    hitVerticalBarrierThisFrame = false;
+
     // move in current direction
     transform.Translate(speed * Time.deltaTime * moveDirection);
 
@@ -40,13 +47,15 @@ public class MoveBall : MonoBehaviour
 
   void OnCollisionEnter2D(Collision2D collision)
   {
-    if (collision.gameObject.CompareTag("vertical barrier")) // hit something vertical, flip x-direction
+    if (collision.gameObject.CompareTag("vertical barrier") && !hitVerticalBarrierThisFrame) // hit something vertical, flip x-direction
     {
       moveDirection.x *= -1;
+      hitVerticalBarrierThisFrame = true; // do not register more than one barrier per frame
     }
-    else if (collision.gameObject.CompareTag("horizontal barrier")) // hit something horizontal, flip y-direction
+    else if (collision.gameObject.CompareTag("horizontal barrier") && !hitHorizontalBarrierThisFrame) // hit something horizontal, flip y-direction
     {
       moveDirection.y *= -1;
+      hitHorizontalBarrierThisFrame = true; // do not register more than one barrier per frame
     }
   }
 
