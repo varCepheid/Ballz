@@ -6,7 +6,7 @@ Click and drag to aim your balls, then release to shoot. The balls will bounce o
 Blocks go away when they get to 0. Hit the round trigger symbols to get an extra ball. Keep going until the blocks reach the bottom row.
 
 ## How to Run
-Go to [the Unity Play webpage for the game](https://play.unity.com).
+Go to [the Unity Play webpage for the game](https://play.unity.com/en/games/84c5b67d-5ab3-446a-be47-0e76307f4522/ballz).
 
 ## Acknowledgements and License
 This game was originally created by Ketchapp as a mobile game. They have full rights to the idea of the game.
