@@ -11,6 +11,7 @@ public class MoveDownEachLevel : MonoBehaviour
 
   public void MoveDown()
   {
+    if (gameManager.GamePhaseMatches("inactive")) return;
     transform.Translate(0.0f, -1.0f, 0.0f);
     if (transform.position.y <= -4.0f)
     {

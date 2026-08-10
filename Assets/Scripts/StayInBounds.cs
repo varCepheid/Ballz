@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Keeps balls and RTS ball between left and right walls.
+// Keeps RTS ball between left and right walls.
 public class StayInBounds : MonoBehaviour
 {
   // Update is called once per frame

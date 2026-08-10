@@ -40,7 +40,10 @@ public class SpawnBlocksAndTokens : MonoBehaviour
 
     // move to ready phase
     gameManager.levelNumber++;
-    gameManager.SetPhase("ready");
+    if (gameManager.GamePhaseMatches("preparing"))
+    {
+      gameManager.SetPhase("ready");
+    }
   }
 
   private void SpawnRow() // spawns new row with one token and collection of blocks

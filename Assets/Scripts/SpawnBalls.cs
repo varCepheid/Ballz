@@ -40,7 +40,7 @@ public class SpawnBalls : MonoBehaviour
   {
     ballsLaunched++;
     thisBall = Instantiate(ballPrefab, rtsBall.transform.position, ballPrefab.transform.rotation);
-    thisBall.GetComponent<MoveBall>().SetDirection(directionToLaunch.normalized);
+    thisBall.GetComponent<MoveBall>().moveDirection = directionToLaunch.normalized;
     ballsCreated.Add(thisBall);
   }
 

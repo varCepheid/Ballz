@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
   public GameObject startButton;
   public GameObject gameOverText;
   public GameObject scoreText;
+  public TextMeshProUGUI finalScoreText;
 
   private SpawnBalls spawnBalls;
   private SpawnBlocksAndTokens spawnBTs;
@@ -79,8 +80,11 @@ public class GameManager : MonoBehaviour
     gameElements.SetActive(false);
     scoreText.SetActive(false);
     gameOverText.SetActive(true);
+    finalScoreText.gameObject.SetActive(true);
     startButton.SetActive(true);
+
     startButton.GetComponentInChildren<TextMeshProUGUI>().text = "Play Again";
+    finalScoreText.text = "Final Score: " + levelNumber;
   }
 
   public IEnumerator SetInactive() // called by blocks when they reach last row, ends game after half a second
@@ -98,6 +102,7 @@ public class GameManager : MonoBehaviour
     titleText.SetActive(false);
     gameOverText.SetActive(false);
     startButton.SetActive(false);
+    finalScoreText.gameObject.SetActive(false);
 
     // set up ready-to-shoot ball
     rtsBall = GameObject.Find("Ready-To-Shoot Ball");

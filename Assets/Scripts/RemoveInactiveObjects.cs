@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(SpawnBalls))]
+[RequireComponent(typeof(SpawnBlocksAndTokens))]
 public class RemoveInactiveObjects : MonoBehaviour
 {
   public GameManager gameManager;
-  public GameObject spawnManager, rtsBall;
+  public GameObject rtsBall;
   public List<GameObject> balls;
   public List<GameObject> blocks;
   public List<GameObject> tokens;
@@ -15,16 +16,19 @@ public class RemoveInactiveObjects : MonoBehaviour
   void Start()
   {
     gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-    spawnManager = GameObject.Find("Spawn Manager");
   }
 
   void Update()
   {
-    balls = spawnManager.GetComponent<SpawnBalls>().ballsCreated;
-    blocks = spawnManager.GetComponent<SpawnBlocksAndTokens>().spawnedBlocks;
-    tokens = spawnManager.GetComponent<SpawnBlocksAndTokens>().spawnedTokens;
+    balls = GetComponent<SpawnBalls>().ballsCreated;
+    blocks = GetComponent<SpawnBlocksAndTokens>().spawnedBlocks;
+    tokens = GetComponent<SpawnBlocksAndTokens>().spawnedTokens;
 
-    if (gameManager.GamePhaseMatches("running") || gameManager.GamePhaseMatches("inactive")) // only check during phase where balls are moving
+    if (gameManager.GamePhaseMatches("holding")) // reset between rounds to be ready for "running" phase
+    {
+      firstBall = true;
+    }
+    else // remove all inactive objects at all times
     {
       for (int i = 0; i < blocks.Count; i++) // check for inactive blocks and remove them
       {
@@ -69,10 +73,6 @@ public class RemoveInactiveObjects : MonoBehaviour
           }
         }
       }
-    }
-    else
-    {
-      firstBall = true;
     }
   }
 }
