@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
     startButton.SetActive(true);
 
     startButton.GetComponentInChildren<TextMeshProUGUI>().text = "Play Again";
-    finalScoreText.text = "Final Score: " + levelNumber;
+    finalScoreText.text = "Final Score: " + levelNumber.ToString();
   }
 
   public IEnumerator SetInactive() // called by blocks when they reach last row, ends game after half a second
